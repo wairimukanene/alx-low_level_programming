@@ -1,20 +1,20 @@
 #include "main.h"
 
 /**
- * _memset - fills a memory block with a constant byte
- * @s: address to memory block
- * @b: char to be used
- * @n: number of bytes to be used
+ * _puts_recursion - prints's a string followed by a new line
+ * @s: string to be printed
  *
- * Return: pointer to the memory block
+ * Return: void
  */
-
-char *_memset(char *s, char b, unsigned int n)
+void _puts_recursion(char *s)
 {
-	while (n)
+	if (*s == '\0')
 	{
-		s[n - 1] = b;
-		n--;
+		_putchar('\n');
 	}
-	return (s);
+	else
+	{
+		_putchar(s[0]);
+		_puts_recursion(s + 1);
+	}
 }
